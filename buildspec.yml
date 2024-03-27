@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+  pre_build:
+    commands:
+    - echo "installing something"
+    - echo "we are in the pre build phase"    
+  build:
+    commands:
+      - echo "No build steps required, deploying static HTML file"
+  post_build:
+    commands:
+      - mkdir build
+      - mv testGIGD.html build/
+      - echo "we are in the post build phase"
+artifacts:
+  files:
+    - '*/'
+
+    
